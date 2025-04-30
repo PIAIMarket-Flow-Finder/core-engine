@@ -7,7 +7,7 @@ metadata:
     nginx.ingress.kubernetes.io/proxy-body-size: "16m"
     nginx.org/client-max-body-size: "16m"
 spec:
-  ingressClassName: nginx
+  ingressClassName: nginx-ext
   rules:
     - host: flow-finder-dev-core-engine.kube-ext.isc.heia-fr.ch
       http:
