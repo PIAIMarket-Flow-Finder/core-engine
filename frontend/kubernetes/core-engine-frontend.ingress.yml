@@ -3,13 +3,11 @@ kind: Ingress
 metadata:
   name: core-engine-frontend-ingress
   annotations:
-    cert-manager.io/issuer: "letsencrypt"
-    nginx.ingress.kubernetes.io/proxy-body-size: "16m"
-    nginx.org/client-max-body-size: "16m"
+    nginx.ingress.kubernetes.io/proxy-body-size: "0"
 spec:
-  ingressClassName: nginx
+  ingressClassName: nginx-ext
   rules:
-    - host: app.swiss-ai-center.ch
+    - host: flow-finder-dev-app.kube-ext.isc.heia-fr.ch
       http:
         paths:
           - path: /
@@ -21,5 +19,4 @@ spec:
                   number: 80
   tls:
     - hosts:
-        - app.swiss-ai-center.ch
-      secretName: app-swiss-ai-center-ch-tls-cert
+        - flow-finder-dev-app.kube-ext.isc.heia-fr.ch
