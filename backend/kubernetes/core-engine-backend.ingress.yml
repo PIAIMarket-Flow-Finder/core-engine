@@ -3,9 +3,7 @@ kind: Ingress
 metadata:
   name: core-engine-backend-ingress
   annotations:
-    cert-manager.io/issuer: "letsencrypt"
-    nginx.ingress.kubernetes.io/proxy-body-size: "16m"
-    nginx.org/client-max-body-size: "16m"
+    nginx.ingress.kubernetes.io/proxy-body-size: "0"
 spec:
   ingressClassName: nginx-ext
   rules:
