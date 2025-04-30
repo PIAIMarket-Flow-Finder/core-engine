@@ -7,7 +7,7 @@ metadata:
 spec:
   ingressClassName: nginx-ext
   rules:
-  - host: minio-swiss-ai-center.kube-ext.isc.heia-fr.ch
+  - host: flow-finder-dev-minio-swiss-ai-center.kube-ext.isc.heia-fr.ch
     http:
       paths:
       - path: /
@@ -17,7 +17,7 @@ spec:
             name: minio-service
             port:
               number: 9000
-  - host: console-minio-swiss-ai-center.kube-ext.isc.heia-fr.ch
+  - host: flow-finder-dev-console-minio-swiss-ai-center.kube-ext.isc.heia-fr.ch
     http:
       paths:
       - path: /
@@ -27,3 +27,7 @@ spec:
             name: minio-service
             port:
               number: 9001
+  tls:
+    - hosts:
+        - flow-finder-dev-console-minio-swiss-ai-center.kube-ext.isc.heia-fr.ch
+        - flow-finder-dev-minio-swiss-ai-center.kube-ext.isc.heia-fr.ch
